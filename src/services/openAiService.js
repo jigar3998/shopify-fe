@@ -1,6 +1,8 @@
 const { Configuration, OpenAIApi } = require("openai");
+
+// Configuring OpenAI api and passing the Prompt and Engine parameter
 const openAiService =async(prompt)=>{
-    
+    console.log("openAI service",prompt)
     const configuration = new Configuration({
         apiKey: process.env.REACT_APP_OPENAI_API_KEY,
       });
