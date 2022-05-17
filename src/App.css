@@ -1,79 +1,40 @@
 *{
-   margin: 100;
   box-sizing: border-box;
+  margin: 0;
   font-family: 'Poppins', sans-serif;
 }
 
-/* .form-container{
-  margin-top: 20px;
-} */
+.form-container{
+  padding: 0;
+}
 
-.main-title{
+.form-prompts{
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.title{
-  margin-left:60px;
-}
-
-.select-engine{
-  margin-top:5px
+  flex-direction: column
 }
 
 .form-label{
-  margin-left: -50px;
+  font-weight: bold;
 }
 
-.btn-primary{
+.submit{
   margin-left: -40px;
 }
 
 .response-card{
-  font-size: 16px;
-  background-color: rgb(252, 247, 247);
+  margin:0px;
+  padding-left: 25px;
+  background-color: rgb(245, 240, 240);
+  border-radius: 3px;
 }
-
-.response-text{
-  margin: -65px -45px;
-  margin-bottom: 0px
-}
-
-.response-div{
-  display: flex;
-  flex-direction: column;
-}
-
-.response{
-  display: flex;
-  flex-direction: row;
-  margin-left:50px
-}
-
-
-.response-prompt{
-}
-
-.response-response{
-  max-width: 1100px;
-  max-height: 500px;  
-}
-
 
 .paragraph-style{
-  position: absolute;
   font-weight: bold;
-  /* width: 100px; */
-  /* padding-right: 15px; */
+  margin:0;
 }
 
-.paragraph-style-prompt{
-  margin-left: -50px;
+.engine{
+  padding-top: 10px;
 }
-
-.paragraph-style-response{
-  margin-left:60px;
-  margin-right: 10px
-}
-
