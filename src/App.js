@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css';
-import PromptForm from './PromptForm'
+import Prompt from './Prompt'
 
 function App() {
   return (
     <div className="App">
-      <PromptForm />
+      <Prompt />
     </div>
   );
 }

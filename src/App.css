@@ -1,21 +1,49 @@
 *{
-  margin: 0;
+   /* margin: 100; */
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
-.form-container{
+/* .form-container{
   margin-top: 20px;
+} */
+
+.main-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title{
+  margin-left:100px;
+}
+
+.select-engine{
+  margin-top:5px
+}
+
+.form-label{
+  margin-left: -50px;
+}
+
+.btn-primary{
+  margin-left: -40px;
 }
 
 .response-card{
   font-size: 16px;
-  background-color: rgb(252, 247, 247)
+  background-color: rgb(252, 247, 247);
+}
+
+.response-text{
+  margin: -65px -45px;
+  margin-bottom: 0px
 }
 
 .response-div{
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  margin-top:2px;
 }
 
 .response{
@@ -27,4 +55,12 @@
   font-weight: bold;
   width: 100px;
   padding-right: 15px;
+}
+
+.paragraph-style-prompt{
+  margin-left: -45px;
+}
+
+.response-prompt{
+  /* margin-left: -45px; */
 }
