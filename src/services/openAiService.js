@@ -6,8 +6,8 @@ const openAiService =async(prompt)=>{
       });
     const openai = new OpenAIApi(configuration);
     
-    const response = await openai.createCompletion(prompt[0].engine,{
-        prompt: `Write a detailed, smart and informative description for ${prompt}`,
+    const response = await openai.createCompletion(prompt.engine,{
+        prompt: `Write a detailed, smart and informative description for ${prompt.prompts}`,
         temperature: 0.5,
         max_tokens: 100,
         top_p: 1,

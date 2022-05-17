@@ -24,7 +24,7 @@ export default function PromptList({prompt}) {
                 </div>
                 <div className="response response-response">
                   <p className="paragraph-style">Response:</p>
-                  <p>{prompt.response}</p>
+                  <p className="paragraph-style-response">{prompt.response}</p>
                 </div>
               </div>
             </Card.Text>

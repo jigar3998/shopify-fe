@@ -25,13 +25,12 @@ export default function prompts() {
     }
   }, [prompts]);
 
-    const handleOnChange=(e)=>{
-        setPrompt((prevPrompts)=> [{
-            ...prevPrompts,
-            engine: e.target.value
-    }])
-    }
-
+    // const handleOnChange=(e)=>{
+    //     setPrompt((prevPrompts)=> [{
+    //         ...prevPrompts,
+    //         engine: e.target.value
+    // }])
+    // }
   const onFormSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -39,7 +38,7 @@ export default function prompts() {
     console.log(formDataObj.prompts);
     setIsLoading(true);
     try {
-      const response = await openAiService(formDataObj.prompts);
+      const response = await openAiService(formDataObj);
       const newPrompt = {
         title: formDataObj.prompts,
         response: response.data.choices[0].text,
@@ -60,12 +59,7 @@ export default function prompts() {
         <div className="main-title">
             <h1 className="title">Fun with AI</h1>
             <div className="select-engine">
-                <Form.Select name="engine" value={prompt.engine}  onChange={handleOnChange}>
-                        <option value="text-curie-001">text-curie-001</option>
-                        <option value="text-davinci-002">text-davinci-002</option>                        
-                        <option value="text-babbage-001">text-babbage-001</option>
-                        <option value="text-ada-001">text-ada-001</option>
-                </Form.Select>
+                
             </div>
         </div>
         <br />
@@ -78,6 +72,15 @@ export default function prompts() {
               placeholder="Enter Text..."
               className="form-control"
             />
+          </Form.Group>
+          <Form.Group className="form-prompts" controlId="formBasicEmail">
+            <Form.Label className="form-label">Engine</Form.Label>
+            <Form.Select name="engine">
+                        <option value="text-curie-001">text-curie-001</option>
+                        <option value="text-davinci-002">text-davinci-002</option>                        
+                        <option value="text-babbage-001">text-babbage-001</option>
+                        <option value="text-ada-001">text-ada-001</option>
+            </Form.Select>
           </Form.Group>
           <br />
           <Button
