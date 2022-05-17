@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container, Card, Form, Spinner } from "react-bootstrap";
+import { Button, Container, Form, Spinner } from "react-bootstrap";
 import "./App.css";
 import PromptList from "./PromptList";
 import openAiService from "./services/openAiService";
@@ -11,7 +11,6 @@ export default function prompts() {
  //Getting the response data from the local storage if present
   useEffect(() => {
     const promptItems = JSON.parse(localStorage.getItem("prompts"));
-    console.log("promptItems", promptItems);
     if (promptItems) {
       setPrompt((prevPrompts) => [...prevPrompts, ...promptItems]);
     }
@@ -35,7 +34,6 @@ export default function prompts() {
     e.preventDefault();
     const formData = new FormData(e.target);
     let formDataObj = Object.fromEntries(formData.entries());
-    console.log(formDataObj.prompts);
     setIsLoading(true);
     try {
       const response = await openAiService(formDataObj);
@@ -46,11 +44,9 @@ export default function prompts() {
         timestamp: new Date().getTime()
       };
       setPrompt((prevPrompts) => [...prevPrompts, newPrompt]);
-      console.log("response", response);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      console.log("error", error);
     }
     e.target.reset()
   };
